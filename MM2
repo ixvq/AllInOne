@@ -21,7 +21,25 @@ OrionLib:MakeNotification({
 UniversalTab:AddButton({
     Name = "Infinite Jump",
     Callback = function()
-		print("successfully grabbed a gun!")
+		-- Local Script: Place this in `StarterPlayer > StarterPlayerScripts` or inside a `LocalScript` in `StarterCharacterScripts`
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local UserInputService = game:GetService("UserInputService")
+
+local jumpPower = 50 -- Adjust the jump power if needed
+
+local function onJumpRequest()
+    -- Apply the jump by setting the Humanoid's Jump power
+    humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+    humanoid.JumpPower = jumpPower
+end
+
+-- Connect the jump request event to our function
+UserInputService.JumpRequest:Connect(onJumpRequest)
+
       end
 })
 
