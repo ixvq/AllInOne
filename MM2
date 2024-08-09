@@ -7,7 +7,7 @@ local UniversalTab = Window:MakeTab({
     PremiumOnly = false
 })
 
-local GunSection = SheriffTab:AddSection({
+local BasicSection = UniversalTab:AddSection({
     Name = "Basic Things"
 })
 
@@ -19,7 +19,7 @@ OrionLib:MakeNotification({
 })
 
 UniversalTab:AddButton({
-    Name = "Grab gun!",
+    Name = "Infinite Jump",
     Callback = function()
 		print("successfully grabbed a gun!")
       end
