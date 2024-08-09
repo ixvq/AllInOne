@@ -1,29 +1,30 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Murder Mystery 2 Script", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local SheriffTab = Window:MakeTab({
-	Name = "Sheriff",
-	Icon = "nil",
-	PremiumOnly = false
+    Name = "Sheriff",
+    Icon = "nil",
+    PremiumOnly = false
 })
 
 local GunSection = SheriffTab:AddSection({
-	Name = "Gun Section"
+    Name = "Gun Section"
 })
 
 OrionLib:MakeNotification({
-	Name = "Notification",
-	Content = "Successfully loaded script!",
-	Image = "nil",
-	Time = 4
+    Name = "Notification",
+    Content = "Successfully loaded script!",
+    Image = "nil",
+    Time = 4
 })
 
-MainTab:AddButton({
-	Name = "Grab gun!",
-	Callback = function()
-      		print("successfully grabbed a gun!")
-  	end    
+SheriffTab:AddButton({
+    Name = "Grab gun!",
+    Callback = function()
+		print("successfully grabbed a gun!")
+      end
 })
+
 
 
 OrionLib:Init()
