@@ -21,9 +21,7 @@ OrionLib:MakeNotification({
 UniversalTab:AddButton({
     Name = "Infinite Jump",
     Callback = function()
-		-- Local Script: Place this in `StarterPlayer > StarterPlayerScripts` or inside a `LocalScript` in `StarterCharacterScripts`
-
-local player = game.Players.LocalPlayer
+		local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 
