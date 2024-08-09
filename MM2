@@ -1,31 +1,27 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Murder Mystery 2 Script", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "All in one", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local UniversalTab = Window:MakeTab({
-    Name = "Universal",
+local MainTab = Window:MakeTab({
+    Name = "Main",
     Icon = "nil",
     PremiumOnly = false
 })
 
-local BasicSection = UniversalTab:AddSection({
-    Name = "Basic Things"
-})
-
 OrionLib:MakeNotification({
     Name = "Notification",
-    Content = "Successfully loaded script!",
+    Content = "Made by t7u7",
     Image = "nil",
     Time = 3
 })
 
-UniversalTab:AddButton({
+MainTab:AddButton({
 	Name = "Dex",
 	Callback = function()
       		loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/dex.lua"))()
   	end    
 })
 
-Tab:AddButton({
+MainTab:AddButton({
 	Name = "Unc Test",
 	Callback = function()
 		local passes, fails, undefined = 0, 0, 0
@@ -903,11 +899,10 @@ end)
       end
 })
 
-UniversalTab:AddButton({
+MainTab:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
 		loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-
 	end
 })
 
