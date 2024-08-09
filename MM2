@@ -1,17 +1,29 @@
-local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/cypherdh/VanisUILIB/main/.gitignore'))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
-local Window = library:CreateWindow("Name", "Version", 10044538000)
+local SheriffTab = Window:MakeTab({
+	Name = "Sheriff",
+	Icon = "nil",
+	PremiumOnly = false
+})
 
-local Tab = Window:CreateTab("Scripts")
+local GunSection = SheriffTab:AddSection({
+	Name = "Gun Section"
+})
 
-local Page = Tab:CreateFrame("Page 1")
+OrionLib:MakeNotification({
+	Name = "Notification",
+	Content = "Successfully loaded script!",
+	Image = "nil",
+	Time = 4
+})
 
-Button = Page:CreateButton("Button", "Description", function()
-CreateNotification("Title", "Description", function(value)
-if value == true then
-print(true)
-else
-print(false)
-end
-end)
-end)
+MainTab:AddButton({
+	Name = "Grab gun!",
+	Callback = function()
+      		print("successfully grabbed a gun!")
+  	end    
+})
+
+
+OrionLib:Init()
